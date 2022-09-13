@@ -1,0 +1,14 @@
+select * from empy where empno in(select mgr from empy);
+ select e.empno,e.ename,e.mgr,d.ename from empy e,empy d where e.mgr=d.empno;
+ select empno,ename from empy where ename='smith';
+ select empno,ename,mgr  from empy;
+ Select * from empy where mgr in(select empno from empy );
+ select e.empno,e.ename,e.mgr,d.ename from empy e,empy d where e.empno=d.mgr;
+ Select * from empy where mgr in(select mgr from empy );
+select * from dept;
+select empno,ename,job,hiredate,d.deptno,d.loc from empy e inner join dept d on e.deptno=d.deptno where e.ename='smith';
+select e.ename,e.job,e.deptno ,d.deptno,d.loc from empy e,dept d  where e.deptno=d.deptno and e.ename='smith';
+select * from  empy where job in(select job from empy where ename='smith'or ename='allen');
+select job from empy where ename='smith'or ename='allen';
+select empno,ename,sal,e.deptno,d.deptno  from empy e,dept d where e.deptno=d.deptno and  d.deptno=10;
+select e.job from empy e where deptno=10;
